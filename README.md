@@ -1,6 +1,6 @@
 # RAG System with OpenAI and Streamlit 🤖📄
 
-Welcome to the **RAG System** (Retrieve and Generate) — an innovative AI-powered chatbot that leverages the OpenAI Assistant API and Streamlit to provide real-time, context-aware answers based on user-uploaded documents.
+Welcome to the **RAG System** (Retrieve and Generate) — Innovative AI-powered chatbot that leverages the OpenAI Assistant API and Streamlit to provide real-time, context-aware answers based on user-uploaded documents.
 
 ## Features ✨
 
