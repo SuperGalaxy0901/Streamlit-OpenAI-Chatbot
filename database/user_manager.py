@@ -26,9 +26,7 @@ def create_users_table():
             """  
             cursor.execute(create_table_query)  
             conn.commit()  
-            # st.success("Table 'users' created successfully or already exists..")  
         except Exception as e:  
-            # st.error(f"Error creating table: {e}")  
             print(e)
         finally:  
             cursor.close()  
@@ -54,7 +52,6 @@ def create_user(email, password):
             signup_mailer(email, verify_id)  
             conn.commit()  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
             flag = 1  
         finally:  
@@ -101,7 +98,6 @@ def verify_user(email):
             )  
             conn.commit()  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
         finally:  
             if 'cursor' in locals():  
@@ -114,12 +110,8 @@ def authenticate_user(email, password):
         try:  
             cursor = conn.cursor()  
             query = "SELECT password, status FROM users WHERE email = %s AND is_gmail = %s"  
-            # st.info(f"Executing query: {query} with email: {email}")  
             cursor.execute(query, (email, 0))  
             record = cursor.fetchone()  
-            
-            # Detailed logging for fetched record  
-            # st.info(f"Fetched record: {record}")  
 
             if record:  
                 if bcrypt.checkpw(password.encode('utf-8'), record[0].encode('utf-8')):  
@@ -132,7 +124,6 @@ def authenticate_user(email, password):
             else:  
                 return "Invalid email or password"  
         except Exception as e:  
-            # st.error(f"Error during query execution: {e}")  
             print(e)
             return False  
         finally:  
@@ -140,7 +131,6 @@ def authenticate_user(email, password):
                 cursor.close()  
             conn.close()  
     else:  
-        # st.error("Unable to connect to the database.")  
         print(e)
         return False  
 
@@ -156,7 +146,6 @@ def get_user_id(email):
             else:  
                 return None  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
             return None  
         finally:  
@@ -175,7 +164,6 @@ def update_user_country(email, country):
             )  
             conn.commit()  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
         finally:  
             if 'cursor' in locals():  

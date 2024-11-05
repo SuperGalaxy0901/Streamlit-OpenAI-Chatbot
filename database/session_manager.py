@@ -16,9 +16,7 @@ def create_session_table():
             """  
             cursor.execute(create_table_query)  
             conn.commit()  
-            # st.success("Table 'session' created successfully or already exists.")  
         except Exception as e:  
-            # st.error(f"Error creating table: {e}")  
             print(e)
         finally:  
             cursor.close()  
@@ -37,9 +35,7 @@ def insert_start_session(user_id):
             cursor.execute("INSERT INTO session (user_id) VALUES (%s) RETURNING id;", (user_id,))  
             new_id = cursor.fetchone()[0]  
             conn.commit()  
-            # st.success("Session started successfully.")  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
         finally:  
             if 'cursor' in locals():  
@@ -55,9 +51,7 @@ def update_end_session(session_id):
             cursor = conn.cursor()  
             cursor.execute(query, (session_id,))  
             conn.commit()  
-            # st.success("Session ended successfully.")  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
         finally:  
             if 'cursor' in locals():  

@@ -19,9 +19,7 @@ def create_chat_table():
             """  
             cursor.execute(create_table_query)  
             conn.commit()  
-            # st.success("Table 'chat' created successfully or already exists.")  
         except Exception as e:  
-            # st.error(f"Error creating table: {e}")  
             print(e)
         finally:  
             cursor.close()  
@@ -36,7 +34,6 @@ def create_chat(user_id, vector_id, thread_id, file_id, assistant_id):
                            (user_id, vector_id, thread_id, file_id, assistant_id))  
             conn.commit()  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
         finally:  
             if 'cursor' in locals():  
@@ -55,7 +52,6 @@ def get_individual_chat(id):
             else:  
                 return None  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
             return None  
         finally:  
@@ -75,7 +71,6 @@ def get_user_chats(user_id):
             else:  
                 return None  
         except Exception as e:  
-            # st.error(f"Error: {e}")  
             print(e)
             return None  
         finally:  
