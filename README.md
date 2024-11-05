@@ -14,7 +14,7 @@ To get started with the RAG system, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/rag-system.git
+   git clone https://github.com/SuperGalaxy0901/Streamlit-OpenAI-Chatbot.git
    cd rag-system
    ```
 
