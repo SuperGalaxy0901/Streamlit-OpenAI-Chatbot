@@ -15,9 +15,7 @@ def create_cost_table():
             """  
             cursor.execute(create_table_query)  
             conn.commit()  
-            # st.success("Table 'cost' created successfully or already exists.")  
-        except Exception as e:  
-            # st.error(f"Error creating table: {e}")  
+        except Exception as e:
             print(e)
         finally:  
             cursor.close()  
