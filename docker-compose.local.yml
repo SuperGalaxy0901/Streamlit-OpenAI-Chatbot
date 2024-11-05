@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  postgres:  
+    image: postgres:13  
+    container_name: postgres  
+    environment:  
+      POSTGRES_DB: oknoke  
+      POSTGRES_USER: oknoke  
+      POSTGRES_PASSWORD: oknoke
+    ports:  
+      - "5432:5432"  # Expose PostgreSQL port  
+    volumes:  
+      - postgres_data:/var/lib/postgresql/data  
+  
+  # nginx:
+  #   container_name: nginx
+  #   restart: always
+  #   build:
+  #     context: ./nginx
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - /etc/letsencrypt/live/gtrag.bot/fullchain.pem:/etc/letsencrypt/live/gtrag.bot/fullchain.pem
+  #     - /etc/letsencrypt/live/gtrag.bot/privkey.pem:/etc/letsencrypt/live/gtrag.bot/privkey.pem
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   depends_on:
+  #     - postgres
+
+volumes:  
+  postgres_data: {}  
