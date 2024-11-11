@@ -56,4 +56,3 @@ To get started with the RAG system, follow these steps:
 
 - [OpenAI](https://openai.com) for their incredible API.
 - [Streamlit](https://streamlit.io) for the easy-to-use app framework.
-- [Contributors](https://github.com/yourusername/rag-system/graphs/contributors) for their support and dedication.
