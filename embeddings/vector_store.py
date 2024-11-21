@@ -112,16 +112,7 @@ def get_conversational_chain(user_question, thread_id, assistant_id, file_name, 
         yield file_citation_annotations
 
     # log internal generation within the openai assistant as a separate child generation to langfuse  
-    if stream.current_run:  
-        # langfuse_client.generation(  
-        #     trace_id=langfuse_context.get_current_trace_id(),  
-        #     parent_observation_id=langfuse_context.get_current_observation_id(),  
-        #     model=stream.current_run.model,
-        #     usage=stream.current_run.usage,  
-        #     input=user_question,  
-        #     output=[r['text'].value for r in stream.current_run.events if r['event'] == 'thread.message.delta']  
-        # )
-        
+    if stream.current_run:          
         # Extract and print cost data
         cost_data = cost_for_tokens(stream.current_run.usage)
         print(f"Cost for this response: {cost_data}")
